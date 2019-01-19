@@ -21,7 +21,7 @@ var books = {
     pages: 200
 }
   console.log(books);
-  
+
 /*
 2.  Declare a variable named `dog` and create the following properties (key-value pairs) to the object:
    
@@ -37,7 +37,14 @@ var books = {
  "My dog `name` is `age` year old and likes to `speak` at strangers."
 */ 
 
-
+var dog = {
+    name: 'Kupo',
+    age: 2,
+    vegetarian: false,
+    color: ['tan', 'cream'],
+    speak: 'bark!'
+}
+console.log('My dog', dog.name, 'is', dog.age, 'years old and likes to', dog.speak, 'at strangers.')
 
 //An empty object
 
