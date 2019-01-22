@@ -305,13 +305,13 @@ console.log(plainBoxResult);
 
  function detectingTransmission(obj){
    if(obj.automaticTransmission === true){
-     return "Automatic is easy.";
+     return "It's automatic.";
    }else{
      return "Manual is the traditional way.";
    }
  }
  var isAutomaticTransmission = detectingTransmission(stockCar);
- console.log(isAutomaticTransmission);
+ console.log('Detecting Transmission:', isAutomaticTransmission);
 
 /*
 12.  Who's driving this thing?!
@@ -325,8 +325,12 @@ console.log(plainBoxResult);
       your results. Consider using `plainPerson` as your driver.
  */
 
-
-
+function addDriver(obj, person){
+  obj.driver = person;
+  return obj;
+}
+var stockCarWithDriver = addDriver(stockCar, plainPerson);
+console.log('Driver:', stockCarWithDriver);
 
 /*
     #Final Boss
@@ -360,3 +364,23 @@ console.log(plainBoxResult);
         'Marifel, age 19, is riding dirty!'
         'Victor, age 19, is riding dirty!'
  */
+
+ var passengerList = ['Jon', 'Jason', 'Tony', 'Joe', 'Jesse', 'Nigel', 'Kelli', 'Marifel', 'Victor'];
+ var passengerAges = [19, 12, 21, 22, 16, 9, 19, 20, 15]
+ function addPassengers(car, names, ages){
+   for(var i = 0; i<names.length; i++){
+     var newRider = {};
+     buildPerson(newRider, names[i], ages[i]);
+     car.passengers.push(newRider);
+   }
+   return car;
+ }
+ addPassengers(stockCar, passengerList, passengerAges);
+ console.log(stockCar);
+
+//  function displayPassengers(car){
+//    for(var i = 0; i<names.length; i++){
+//     console.log(name[i] + ' ' + age[i] + ' ' + 'is riding dirty!');
+//    }
+//  }
+ 
